@@ -1,0 +1,445 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+{% block title %}
+<div class = "title">
+    Stage 1: Observation of all sets of cards
+</div>
+{% endblock %}
+
+
+{% block content %}
+
+    <p style="background-color:LightGray;"> <font size="+2">Time Left:  <span style="color:red" id="time-left"></span>  seconds. </font></p>
+
+<div class = "right_column">
+        <font size="+1">
+
+{% if subsession.round_number == 1 %}
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set1.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set1.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set1.jpg" %}" width="1600px"/><br><br>
+
+
+{% elif subsession.round_number == 2 %}
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set2.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set2.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set2.jpg" %}" width="1600px"/><br><br>
+
+
+{% elif subsession.round_number == 3 %}
+
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set3.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set3.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set3.jpg" %}" width="1600px"/><br><br>
+
+
+{% elif subsession.round_number == 4 %}
+
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set1.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set1.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set1.jpg" %}" width="1600px"/><br><br>
+
+
+{% elif subsession.round_number == 5 %}
+
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set2.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set2.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set2.jpg" %}" width="1600px"/><br><br>
+
+
+
+{% elif subsession.round_number == 6 %}
+
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set3.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set3.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set3.jpg" %}" width="1600px"/><br><br>
+
+
+
+{% elif subsession.round_number == 7 %}
+
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set1.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set1.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set1.jpg" %}" width="1600px"/><br><br>
+
+
+{% elif subsession.round_number == 8 %}
+
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set2.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set2.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set2.jpg" %}" width="1600px"/><br><br>
+
+
+{% elif subsession.round_number == 9 %}
+
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set3.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set3.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set3.jpg" %}" width="1600px"/><br><br>
+
+
+{% elif subsession.round_number == 10 %}
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set4.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set4.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set4.jpg" %}" width="1600px"/><br><br>
+
+
+{% elif subsession.round_number == 11 %}
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set5.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set5.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set5.jpg" %}" width="1600px"/><br><br>
+
+
+{% elif subsession.round_number == 12 %}
+
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set6.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set6.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set6.jpg" %}" width="1600px"/><br><br>
+
+
+{% elif subsession.round_number == 13 %}
+
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set4.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set4.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set4.jpg" %}" width="1600px"/><br><br>
+
+
+{% elif subsession.round_number == 14 %}
+
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set5.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set5.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set5.jpg" %}" width="1600px"/><br><br>
+
+
+
+{% elif subsession.round_number == 15 %}
+
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set6.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set6.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set6.jpg" %}" width="1600px"/><br><br>
+
+
+
+{% elif subsession.round_number == 16 %}
+
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set4.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set4.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set4.jpg" %}" width="1600px"/><br><br>
+
+
+{% elif subsession.round_number == 17 %}
+
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set5.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set5.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set5.jpg" %}" width="1600px"/><br><br>
+
+
+{% elif subsession.round_number == 18 %}
+
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set6.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set6.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set6.jpg" %}" width="1600px"/><br><br>
+
+{% elif subsession.round_number == 19 %}
+
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set7.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set7.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set7.jpg" %}" width="1600px"/><br><br>
+
+
+{% else %}
+
+
+Set <b>Up</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Middle_set7.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Middle</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Down_set7.jpg" %}" width="1600px"/><br><br>
+
+
+Set <b>Down</b> has the following sixteen cards: <br>
+
+<img src="{% static "Eighty/Eighty_Up_set7.jpg" %}" width="1600px"/><br><br>
+
+
+{% endif %}
+
+        </font>
+
+</div>
+
+
+<div style="width: 100%; height:100px;  vertical-align: middle;" class = "break_box">
+
+</div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<style>
+    .otree-timer {
+        display: none;
+    }
+</style>
+
+ <script>
+        let customTimerEle = document.getElementById('time-left');
+
+        document.addEventListener("DOMContentLoaded", function (event) {
+            $('.otree-timer__time-left').on('update.countdown', function (event) {
+                customTimerEle.innerText = event.offset.totalSeconds;
+            });
+        });
+
+    </script>
+
+{% endblock %}
+
+
+
+{% block styles %}
+
+
+<style>
+
+div.title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom:10px;
+    margin-top:-25px;
+}
+
+
+
+div.right_column {
+        float: right;
+    width: 1600px;
+    margin-right:-300px;
+}
+
+ div.break_box {
+    vertical-align: middle;
+     clear: both;
+}
+
+
+</style>
+
+{% endblock %}
+

@@ -1,0 +1,32 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block content %}
+
+2. Given the following cards. It the drawn set is <b>Up</b>, what is the center shape of the second card?
+
+{% formfield player.Q2_choice %}
+
+
+<br><br>
+
+Set <b>Up</b> has the following eight cards: <br><br>
+
+<img src="{% static "NonMonotone/Fourty_Up_set7.jpg" %}" width="1000px"/><br><br>
+
+
+Set <b>Middle</b> has the following eight cards: <br><br>
+
+<img src="{% static "NonMonotone/Fourty_Middle_set7.jpg" %}" width="1000px"/><br><br>
+
+
+Set <b>Down</b> has the following eight cards: <br><br>
+
+<img src="{% static "NonMonotone/Fourty_Down_set7.jpg" %}" width="1000px"/><br><br>
+
+
+    {% next_button %}
+
+
+{% endblock %}
+

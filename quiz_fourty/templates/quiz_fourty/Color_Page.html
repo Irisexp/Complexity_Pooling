@@ -1,0 +1,13 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block content %}
+
+{% formfield player.Color_choice %}
+
+<img src="{% static "Complexity/quiz.jpg" %}" width="500px"/><br><br>
+
+{% next_button %}
+
+{% endblock %}
+

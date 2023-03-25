@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Results
+{% endblock %}
+
+
+{% block content %}
+
+
+<b>Your answer is {% if player.Q4_choice == 4%} Correct{% else %}Wrong{% endif %}. </b><br>
+<br>
+The correct answer is marked with &#9745 below. <br><br>
+
+4. Suppose the drawn set is <b>Down</b>. The sender reports the set to be <b>Up</b>. If the receiver guesses <b>Down</b>, the payoffs are: <br>
+
+(15,15) <br>
+(3,3) <br>
+(15, 3) <br>
+&#9745(3, 15)<br>
+
+
+<br><br>
+
+{% next_button %}
+{% endblock %}
+
+

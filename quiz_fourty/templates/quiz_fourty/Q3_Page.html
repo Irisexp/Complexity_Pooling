@@ -1,0 +1,48 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Receiver Guess Plan
+{% endblock %}
+
+{% block content %}
+
+
+    3.	Suppose the receiver chooses the following three questions to ask the sender: <br>
+
+    What's the background color of the second card? <br>
+
+    What's the number of the third card? <br>
+
+    What's the center letter of the third card? <br>
+
+    Suppose the sender reports the set to be <b>Middle</b>, which of the following messages are consistent?
+
+
+
+{% formfield player.Q3_choice %}
+
+<br><br>
+
+Set <b>Up</b> has the following eight cards: <br><br>
+
+<img src="{% static "NonMonotone/Fourty_Up_set7.jpg" %}" width="1000px"/><br><br>
+
+
+Set <b>Middle</b> has the following eight cards: <br><br>
+
+<img src="{% static "NonMonotone/Fourty_Middle_set7.jpg" %}" width="1000px"/><br><br>
+
+
+Set <b>Down</b> has the following eight cards: <br><br>
+
+<img src="{% static "NonMonotone/Fourty_Down_set7.jpg" %}" width="1000px"/><br><br>
+
+<br><br>
+
+    {% next_button %}
+
+
+
+{% endblock %}
+

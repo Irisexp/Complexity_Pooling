@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Results
+{% endblock %}
+
+
+{% block content %}
+The number of questions you correctly answer is {{correct}}. <br>
+You get ${{player.round_payoff}} for the comprehension quiz.<br>
+
+<br>
+
+{% next_button %}
+
+
+{% endblock %}

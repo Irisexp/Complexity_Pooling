@@ -1,0 +1,65 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+<div class = "title">
+   Instructions
+</div>
+{% endblock %}
+
+
+{% block content %}
+
+    <font size="+1">
+
+{% if player.id_in_group == 1%}
+
+
+In the next page you will have <b>{{Constants.time}} seconds</b> to look at the three sets of cards (Up, Middle and Down).<br><br>
+
+The receiver will also have <b>{{Constants.time}} seconds</b> to look at the cards.
+
+       In stage 2 only the drawn set of cards will be shown to you but not the other two undrawn sets, and you will answer the 3 questions selected by the computer. <br><br>
+
+        You will play for 20 rounds of the decision problem. In each round the set of cards will be different. The three questions will also be randomly selected in every round.
+{% else %}
+
+In the next two pages you will first have <b>{{Constants.time}} seconds</b> to look at the three sets of cards selected in this round.
+
+The sender will also have <b>{{Constants.time}} seconds</b> to look at the cards.  <br>
+
+        In stage 2 only the drawn set of cards will be shown to the sender but not the other two undrawn sets, and the sender will answer the 3 questions selected by the computer. Then in stage 3 you make a guess decision based on the sender's messages about the the drawn set and the three questions.<br><br>
+
+        You will play for 20 rounds of the decision problem. In each round the set of cards will be different. The three questions will also be randomly selected in every round.
+{% endif %}
+<br><br>
+
+
+Click "Next" to continue.
+
+    </font>
+
+{% next_button %}
+
+{% endblock %}
+
+
+
+
+{% block styles %}
+
+
+<style>
+div.title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom:10px;
+    margin-top:-25px;
+}
+
+
+</style>
+
+{% endblock %}
+
+

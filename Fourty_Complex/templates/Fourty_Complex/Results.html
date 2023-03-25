@@ -1,0 +1,402 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+<div class = "title">
+    Results of Round {{round}}
+</div>
+{% endblock %}
+
+
+{% block content %}
+    <font size="+1">
+
+<br>
+{% if player.id_in_group == 1%}
+
+The receiver's guess is {% if group.true_state == group.guess%} <b>correct</b> {%else%} Wrong {% endif %}.
+
+
+          <table class = "Summary" cellpadding="10">
+        <tr>
+            <th>Drawn Set </th>
+            <th>Your Message</th>
+            <th>Receiver's Guess</th>
+            <th>Your Payoff</th>
+            <th>Receiver's Payoff</th>
+        </tr>
+     <tr>
+            <th> {% if group.true_state == 1%} <b>Up</b> {% elif group.true_state == 2%}<b>Middle</b> {% else %}<b>Down</b> {% endif %}</th>
+            <th>{% if group.message == 1%} <b>Up</b> {% elif group.message == 2%}<b>Middle</b> {% else %}<b>Down</b> {% endif %}</th>
+            <th>{% if group.guess == 1%} <b>Up</b> {% elif group.guess == 2%}<b>Middle</b> {% else %}<b>Down</b> {% endif %}</th>
+            <th>{{player.round_payoff}}</th>
+            <th>{{player.other_payoff}} </th>
+        </tr>
+    </table>
+
+
+      {% else %}
+        Your guess is {% if group.true_state == group.guess%} <b>correct</b> {%else%} Wrong {% endif %}.
+
+
+
+                  <table class = "Summary" cellpadding="10">
+        <tr>
+            <th>Drawn Set </th>
+            <th>Sender's Message</th>
+            <th>Your Guess</th>
+            <th>Your Payoff</th>
+            <th>Sender's Payoff</th>
+        </tr>
+     <tr>
+            <th> {% if group.true_state == 1%} <b>Up</b> {% elif group.true_state == 2%}<b>Middle</b> {% else %}<b>Down</b> {% endif %}</th>
+            <th>{% if group.message == 1%} <b>Up</b> {% elif group.message == 2%}<b>Middle</b> {% else %}<b>Down</b> {% endif %}</th>
+            <th>{% if group.guess == 1%} <b>Up</b> {% elif group.guess == 2%}<b>Middle</b> {% else %}<b>Down</b> {% endif %}</th>
+            <th>{{player.round_payoff}}</th>
+            <th>{{player.other_payoff}} </th>
+        </tr>
+    </table>
+
+{% endif %}
+
+        <br>
+
+        The results about the sender's messages for the three questions are as follows.<br>
+
+ <table class = "Check" cellpadding="10">
+          <tr>
+            <th>First question </th>
+                <th> {% if group.check_first == 1%} <b>Consistent</b> {% else %}<b>Inconsistent</b> {% endif %}</th>
+        </tr>
+
+        <tr>
+              <th>Second question </th>
+            <th> {% if group.check_second == 1%} <b>Consistent</b> {% else %}<b>Inconsistent</b> {% endif %} </th>
+        </tr>
+
+               <tr>
+            <th>Third question </th>
+        <th> {% if group.check_third == 1%} <b>Consistent</b> {% else %}<b>Inconsistent</b> {% endif %}  </th>
+        </tr>
+
+    </table>
+<br><br>
+
+The payoffs are highlighted in the following table:
+        <br>
+{% if group.true_state == 1 %}
+
+{% if group.guess == 1 %}
+
+  <table class = "Payoffs" cellpadding="10">
+        <tr>
+            <th></th>
+            <th style="color:red">Receiver Guess Up</th>
+            <th>Receiver Guess Middle</th>
+            <th>Receiver Guess Down</th>
+        </tr>
+     <tr>
+            <th style="color:red">Set is Up</th>
+            <th style="color:red">Sender 15, Receiver 15</th>
+            <th>Sender 12, Receiver 12</th>
+            <th>Sender 3, Receiver 3</th>
+        </tr>
+           <tr>
+            <th>Set is Middle</th>
+            <th>Sender 15, Receiver 8</th>
+            <th>Sender 12, Receiver 15</th>
+            <th>Sender 3, Receiver 12</th>
+        </tr>
+      <tr>
+            <th>Set is Down</th>
+            <th>Sender 15, Receiver 3</th>
+            <th>Sender 12, Receiver 8</th>
+            <th>Sender 3, Receiver 15</th>
+        </tr>
+    </table>
+
+
+{% elif group.guess == 2 %}
+
+
+  <table class = "Payoffs" cellpadding="10">
+        <tr>
+            <th></th>
+            <th>Receiver Guess Up</th>
+            <th style="color:red">Receiver Guess Middle</th>
+            <th>Receiver Guess Down</th>
+        </tr>
+     <tr>
+            <th style="color:red">Set is Up</th>
+            <th>Sender 15, Receiver 15</th>
+            <th style="color:red">Sender 12, Receiver 12</th>
+            <th>Sender 3, Receiver 3</th>
+        </tr>
+           <tr>
+            <th>Set is Middle</th>
+            <th>Sender 15, Receiver 8</th>
+            <th>Sender 12, Receiver 15</th>
+            <th>Sender 3, Receiver 12</th>
+        </tr>
+      <tr>
+            <th>Set is Down</th>
+            <th>Sender 15, Receiver 3</th>
+            <th>Sender 12, Receiver 8</th>
+            <th>Sender 3, Receiver 15</th>
+        </tr>
+    </table>
+
+{% else %}
+
+
+  <table class = "Payoffs" cellpadding="10">
+        <tr>
+            <th></th>
+            <th>Receiver Guess Up</th>
+            <th>Receiver Guess Middle</th>
+            <th style="color:red">Receiver Guess Down</th>
+        </tr>
+     <tr>
+            <th style="color:red">Set is Up</th>
+            <th>Sender 15, Receiver 15</th>
+            <th>Sender 12, Receiver 12</th>
+            <th style="color:red">Sender 3, Receiver 3</th>
+        </tr>
+           <tr>
+            <th>Set is Middle</th>
+            <th>Sender 15, Receiver 8</th>
+            <th>Sender 12, Receiver 15</th>
+            <th>Sender 3, Receiver 12</th>
+        </tr>
+      <tr>
+            <th>Set is Down</th>
+            <th>Sender 15, Receiver 3</th>
+            <th>Sender 12, Receiver 8</th>
+            <th>Sender 3, Receiver 15</th>
+        </tr>
+    </table>
+{% endif %}
+
+{% elif group.true_state == 2 %}
+
+{% if group.guess == 1 %}
+  <table class = "Payoffs" cellpadding="10">
+        <tr>
+            <th></th>
+            <th style="color:red">Receiver Guess Up</th>
+            <th>Receiver Guess Middle</th>
+            <th>Receiver Guess Down</th>
+        </tr>
+     <tr>
+            <th>Set is Up</th>
+            <th>Sender 15, Receiver 15</th>
+            <th>Sender 12, Receiver 12</th>
+            <th>Sender 3, Receiver 3</th>
+        </tr>
+           <tr>
+            <th style="color:red">Set is Middle</th>
+            <th style="color:red">Sender 15, Receiver 8</th>
+            <th>Sender 12, Receiver 15</th>
+            <th>Sender 3, Receiver 12</th>
+        </tr>
+      <tr>
+            <th>Set is Down</th>
+            <th>Sender 15, Receiver 3</th>
+            <th>Sender 12, Receiver 8</th>
+            <th>Sender 3, Receiver 15</th>
+        </tr>
+    </table>
+
+
+{% elif group.guess == 2 %}
+  <table class = "Payoffs" cellpadding="10">
+        <tr>
+            <th></th>
+            <th>Receiver Guess Up</th>
+            <th style="color:red">Receiver Guess Middle</th>
+            <th>Receiver Guess Down</th>
+        </tr>
+     <tr>
+            <th>Set is Up</th>
+            <th>Sender 15, Receiver 15</th>
+            <th>Sender 12, Receiver 12</th>
+            <th>Sender 3, Receiver 3</th>
+        </tr>
+           <tr>
+            <th style="color:red">Set is Middle</th>
+            <th>Sender 15, Receiver 8</th>
+            <th style="color:red">Sender 12, Receiver 15</th>
+            <th>Sender 3, Receiver 12</th>
+        </tr>
+      <tr>
+            <th>Set is Down</th>
+            <th>Sender 15, Receiver 3</th>
+            <th>Sender 12, Receiver 8</th>
+            <th>Sender 3, Receiver 15</th>
+        </tr>
+    </table>
+
+{% else %}
+  <table class = "Payoffs" cellpadding="10">
+        <tr>
+            <th></th>
+            <th>Receiver Guess Up</th>
+            <th>Receiver Guess Middle</th>
+            <th style="color:red">Receiver Guess Down</th>
+        </tr>
+     <tr>
+            <th>Set is Up</th>
+            <th>Sender 15, Receiver 15</th>
+            <th>Sender 12, Receiver 12</th>
+            <th>Sender 3, Receiver 3</th>
+        </tr>
+           <tr>
+            <th style="color:red">Set is Middle</th>
+            <th>Sender 15, Receiver 8</th>
+            <th>Sender 12, Receiver 15</th>
+            <th style="color:red">Sender 3, Receiver 12</th>
+        </tr>
+      <tr>
+            <th>Set is Down</th>
+            <th>Sender 15, Receiver 3</th>
+            <th>Sender 12, Receiver 8</th>
+            <th>Sender 3, Receiver 15</th>
+        </tr>
+    </table>
+{% endif %}
+
+{% else %}
+
+{% if group.guess == 1 %}
+  <table class = "Payoffs" cellpadding="10">
+        <tr>
+            <th></th>
+            <th style="color:red">Receiver Guess Up</th>
+            <th>Receiver Guess Middle</th>
+            <th>Receiver Guess Down</th>
+        </tr>
+     <tr>
+            <th>Set is Up</th>
+            <th>Sender 15, Receiver 15</th>
+            <th>Sender 12, Receiver 12</th>
+            <th>Sender 3, Receiver 3</th>
+        </tr>
+           <tr>
+            <th>Set is Middle</th>
+            <th >Sender 15, Receiver 8</th>
+            <th>Sender 12, Receiver 15</th>
+            <th>Sender 3, Receiver 12</th>
+        </tr>
+      <tr>
+            <th style="color:red">Set is Down</th>
+            <th style="color:red">Sender 15, Receiver 3</th>
+            <th>Sender 12, Receiver 8</th>
+            <th>Sender 3, Receiver 15</th>
+        </tr>
+    </table>
+
+
+{% elif group.guess == 2 %}
+  <table class = "Payoffs" cellpadding="10">
+        <tr>
+            <th></th>
+            <th>Receiver Guess Up</th>
+            <th style="color:red">Receiver Guess Middle</th>
+            <th>Receiver Guess Down</th>
+        </tr>
+     <tr>
+            <th>Set is Up</th>
+            <th>Sender 15, Receiver 15</th>
+            <th>Sender 12, Receiver 12</th>
+            <th>Sender 3, Receiver 3</th>
+        </tr>
+           <tr>
+            <th>Set is Middle</th>
+            <th >Sender 15, Receiver 8</th>
+            <th>Sender 12, Receiver 15</th>
+            <th>Sender 3, Receiver 12</th>
+        </tr>
+      <tr>
+            <th style="color:red">Set is Down</th>
+            <th>Sender 15, Receiver 3</th>
+            <th style="color:red">Sender 12, Receiver 8</th>
+            <th>Sender 3, Receiver 15</th>
+        </tr>
+    </table>
+
+
+{% else %}
+  <table class = "Payoffs" cellpadding="10">
+        <tr>
+            <th></th>
+            <th>Receiver Guess Up</th>
+            <th>Receiver Guess Middle</th>
+            <th style="color:red">Receiver Guess Down</th>
+        </tr>
+     <tr>
+            <th>Set is Up</th>
+            <th>Sender 15, Receiver 15</th>
+            <th>Sender 12, Receiver 12</th>
+            <th>Sender 3, Receiver 3</th>
+        </tr>
+           <tr>
+            <th>Set is Middle</th>
+            <th >Sender 15, Receiver 8</th>
+            <th>Sender 12, Receiver 15</th>
+            <th>Sender 3, Receiver 12</th>
+        </tr>
+      <tr>
+            <th style="color:red">Set is Down</th>
+            <th>Sender 15, Receiver 3</th>
+            <th>Sender 12, Receiver 8</th>
+            <th style="color:red">Sender 3, Receiver 15</th>
+        </tr>
+    </table>
+
+{% endif %}
+
+{% endif %}
+
+    </font>
+
+
+<br><br>
+
+{% next_button %}
+
+{% endblock %}
+
+
+
+{% block styles %}
+
+
+<style>
+div.title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom:10px;
+    margin-top:-25px;
+}
+
+
+
+
+div.Down_column {
+        float: right;
+    width: 1200px;
+    margin-right:-150px;
+    border: 2px solid grey;
+    border-radius: 12px;
+    padding: 20px;
+}
+table, th {
+  border-top: 1px solid #ddd;
+   border-bottom: 1px solid #ddd;
+}
+
+
+</style>
+
+{% endblock %}
+

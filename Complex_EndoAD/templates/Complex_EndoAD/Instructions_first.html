@@ -1,0 +1,120 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+<div class = "title">
+   Instructions
+</div>
+{% endblock %}
+
+{% block content %}
+
+<font size="+1">
+
+You are {%if player.id_in_group == 1%} <b>Sender</b>  {% else%} <b>Receiver</b>  {% endif %}.<br> <br>
+
+The set drawn in each round is <b>equally likely</b> to be Up, Middle and Down.  Each set includes 4 cards.<br><br>
+
+
+
+<div class = "Down_column">
+
+    <b>Reminder of Sender's Payoffs</b> <br>
+
+Your payoff is only dependent on the receiver's guess regardless of the drawn set. You get<br>
+    $15 if the receiver guesses Up.<br>
+    $x if the receiver guesses Middle. <br>
+    $x if the receiver guesses Down. <br><br>
+
+x is randomly drawn in each round. With 50% chance x will be 12 and with 50% chance x will be 3. <br><br>
+
+    <b>Reminder of Receiver's Payoffs</b> <br>
+You get the highest payoff for guessing correctly about the drawn set. <br>
+
+    If the drawn set is Up, you get $15 for guessing Up, $12 for guessing Middle, and $3 for guessing Down. <br>
+    If the drawn set is Middle, you get $15 for guessing Middle, $8 for guessing Up and $12 for guessing Down. <br>
+    If the drawn set is Down, you get $15 for guessing Down, $8 for guessing Middle and $3 for guessing Up. <br><br>
+
+    If you are uncertain about what the drawn set is:<br>
+    If you think the drawn set is equally likely to be Middle or Down, guessing Down leads to the highest expected payoff. <br>
+    If you think the drawn set is equally likely to be Up or Middle, guessing Middle leads to the highest expected payoff. <br>
+    If you think the drawn set is equally likely to be Up, Middle or Down, guessing Middle leads to the highest expected payoff. <br>
+
+
+<!--<br>The receiver can select 3 out of 20 elements in the card to ask you. <br>-->
+<!--The receiver observes both your answers to the set name (Up, Middle or Down) and the 3 questions before making the guess decision. <br>-->
+
+    </div>
+
+</font>
+
+<br><br>
+
+
+<!--The payoffs to each player are as follows:-->
+
+<!--<br><br>-->
+
+  <!--<table class = "Payoffs" cellpadding="10">-->
+        <!--<tr>-->
+            <!--<th></th>-->
+            <!--<th>Receiver Guess Up</th>-->
+            <!--<th>Receiver Guess Middle</th>-->
+            <!--<th>Receiver Guess Down</th>-->
+        <!--</tr>-->
+     <!--<tr>-->
+            <!--<th>Set is Up</th>-->
+            <!--<th>Sender 15, Receiver 15</th>-->
+            <!--<th>Sender 10, Receiver 10</th>-->
+            <!--<th>Sender 3, Receiver 3</th>-->
+        <!--</tr>-->
+           <!--<tr>-->
+            <!--<th>Set is Middle</th>-->
+            <!--<th>Sender 15, Receiver 10</th>-->
+            <!--<th>Sender 10, Receiver 15</th>-->
+            <!--<th>Sender 3, Receiver 8</th>-->
+        <!--</tr>-->
+      <!--<tr>-->
+            <!--<th>Set is Down</th>-->
+            <!--<th>Sender 15, Receiver 3</th>-->
+            <!--<th>Sender 10, Receiver 8</th>-->
+            <!--<th>Sender 3, Receiver 15</th>-->
+        <!--</tr>-->
+    <!--</table>-->
+
+<!--<br><br>-->
+
+
+{% next_button %}
+
+{% endblock %}
+
+
+
+
+{% block styles %}
+
+
+<style>
+div.title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom:10px;
+    margin-top:-25px;
+}
+
+
+div.Down_column {
+        float: right;
+    width: 1200px;
+    margin-right:-150px;
+    border: 2px solid grey;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+</style>
+
+{% endblock %}
+
+

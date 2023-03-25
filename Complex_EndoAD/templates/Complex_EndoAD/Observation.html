@@ -1,0 +1,721 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+<div class = "title">
+    Stage 2: Observation of all sets of cards
+</div>
+{% endblock %}
+
+
+{% block content %}
+
+    <p style="background-color:LightGray;"> <font size="+2">Time Left:  <span style="color:red" id="time-left"></span>  seconds. </font></p>
+
+<div class = "left_column">
+
+{% if player.id_in_group == 1%}
+    <font size="+1">
+
+The receiver is also looking at all three set of cards. <b>Recall that they know what 3 questions the computer chose. </b> <br>
+On the next page only the drawn set of cards will be shown to you, and you will have to answer the 3 questions selected by the computer. <br><br>
+
+
+{% else %}
+
+
+The three questions selected in this round are: <br>
+
+{% if group.random_first == 0 %}
+
+<br>What's the background color of the <b>first</b> card?</br>
+
+{% elif group.random_first == 1 %}
+
+<br>What's the center shape of the <b>first</b> card?</br>
+
+{% elif group.random_first == 2 %}
+
+<br>What's the center letter of the <b>first</b> card?</br>
+
+{% elif group.random_first == 3 %}
+
+<br>What's the number of the <b>first</b> card?</br>
+
+{% elif group.random_first == 4 %}
+
+<br>What's the mathematical symbol of the <b>first</b> card?</br>
+
+{% elif group.random_first == 5 %}
+
+<br>What's the background color of the <b>second</b> card?</br>
+
+{% elif group.random_first == 6 %}
+
+<br>What's the center shape of the <b>second</b> card?</br>
+
+{% elif group.random_first == 7 %}
+
+<br>What's the center letter of the <b>second</b> card?</br>
+
+{% elif group.random_first == 8 %}
+
+<br>What's the number of the <b>second</b> card?</br>
+
+{% elif group.random_first == 9 %}
+
+<br> What's the mathematical symbol of the <b>second</b> card?</br>
+
+{% elif group.random_first == 10 %}
+
+<br>What's the background color of the <b>third</b> card?</br>
+
+{% elif group.random_first == 11 %}
+
+<br>What's the center shape of the <b>third</b> card?</br>
+
+{% elif group.random_first == 12 %}
+
+<br>What's the center letter of the <b>third</b> card?</br>
+
+{% elif group.random_first == 13 %}
+
+<br>What's the number of the <b>third</b> card?</br>
+
+{% elif group.random_first == 14 %}
+
+<br>What's the mathematical symbol of the <b>third</b> card?</br>
+
+{% elif group.random_first == 15 %}
+
+<br>What's the background color of the <b>fourth</b> card?</br>
+
+{% elif group.random_first == 16 %}
+
+<br>What's the center shape of the <b>fourth</b> card?</br>
+
+{% elif group.random_first == 17 %}
+
+<br>What's the center letter of the <b>fourth</b> card?</br>
+
+{% elif group.random_first == 18 %}
+
+<br>What's the number of the <b>fourth</b> card?</br>
+
+{% else %}
+
+<br>What's the mathematical symbol of the <b>fourth</b> card?</br>
+
+{% endif %}
+
+{% if group.random_second == 0 %}
+
+<br>What's the background color of the <b>first</b> card?</br>
+
+{% elif group.random_second == 1 %}
+
+<br>What's the center shape of the <b>first</b> card?</br>
+
+{% elif group.random_second == 2 %}
+
+<br>What's the center letter of the <b>first</b> card?</br>
+
+{% elif group.random_second == 3 %}
+
+<br>What's the number of the <b>first</b> card?</br>
+
+{% elif group.random_second == 4 %}
+
+<br>What's the mathematical symbol of the <b>first</b> card?</br>
+
+{% elif group.random_second == 5 %}
+
+<br>What's the background color of the <b>second</b> card?</br>
+
+{% elif group.random_second == 6 %}
+
+<br>What's the center shape of the <b>second</b> card?</br>
+
+{% elif group.random_second == 7 %}
+
+<br>What's the center letter of the <b>second</b> card?</br>
+
+{% elif group.random_second == 8 %}
+
+<br>What's the number of the <b>second</b> card?</br>
+
+{% elif group.random_second == 9 %}
+
+<br> What's the mathematical symbol of the <b>second</b> card?</br>
+
+{% elif group.random_second == 10 %}
+
+<br>What's the background color of the <b>third</b> card?</br>
+
+{% elif group.random_second == 11 %}
+
+<br>What's the center shape of the <b>third</b> card?</br>
+
+{% elif group.random_second == 12 %}
+
+<br>What's the center letter of the <b>third</b> card?</br>
+
+{% elif group.random_second == 13 %}
+
+<br>What's the number of the <b>third</b> card?</br>
+
+{% elif group.random_second == 14 %}
+
+<br>What's the mathematical symbol of the <b>third</b> card?</br>
+
+{% elif group.random_second == 15 %}
+
+<br>What's the background color of the <b>fourth</b> card?</br>
+
+{% elif group.random_second == 16 %}
+
+<br>What's the center shape of the <b>fourth</b> card?</br>
+
+{% elif group.random_second == 17 %}
+
+<br>What's the center letter of the <b>fourth</b> card?</br>
+
+{% elif group.random_second == 18 %}
+
+<br>What's the number of the <b>fourth</b> card?</br>
+
+{% else %}
+
+<br>What's the mathematical symbol of the <b>fourth</b> card?</br>
+
+{% endif %}
+
+{% if group.random_third == 0 %}
+
+<br>What's the background color of the <b>first</b> card?</br>
+
+{% elif group.random_third == 1 %}
+
+<br>What's the center shape of the <b>first</b> card?</br>
+
+{% elif group.random_third == 2 %}
+
+<br>What's the center letter of the <b>first</b> card?</br>
+
+{% elif group.random_third == 3 %}
+
+<br>What's the number of the <b>first</b> card?</br>
+
+{% elif group.random_third == 4 %}
+
+<br>What's the mathematical symbol of the <b>first</b> card?</br>
+
+{% elif group.random_third == 5 %}
+
+<br>What's the background color of the <b>second</b> card?</br>
+
+{% elif group.random_third == 6 %}
+
+<br>What's the center shape of the <b>second</b> card?</br>
+
+{% elif group.random_third == 7 %}
+
+<br>What's the center letter of the <b>second</b> card?</br>
+
+{% elif group.random_third == 8 %}
+
+<br>What's the number of the <b>second</b> card?</br>
+
+{% elif group.random_third == 9 %}
+
+<br> What's the mathematical symbol of the <b>second</b> card?</br>
+
+{% elif group.random_third == 10 %}
+
+<br>What's the background color of the <b>third</b> card?</br>
+
+{% elif group.random_third == 11 %}
+
+<br>What's the center shape of the <b>third</b> card?</br>
+
+{% elif group.random_third == 12 %}
+
+<br>What's the center letter of the <b>third</b> card?</br>
+
+{% elif group.random_third == 13 %}
+
+<br>What's the number of the <b>third</b> card?</br>
+
+{% elif group.random_third == 14 %}
+
+<br>What's the mathematical symbol of the <b>third</b> card?</br>
+
+{% elif group.random_third == 15 %}
+
+<br>What's the background color of the <b>fourth</b> card?</br>
+
+{% elif group.random_third == 16 %}
+
+<br>What's the center shape of the <b>fourth</b> card?</br>
+
+{% elif group.random_third == 17 %}
+
+<br>What's the center letter of the <b>fourth</b> card?</br>
+
+{% elif group.random_third == 18 %}
+
+<br>What's the number of the <b>fourth</b> card?</br>
+
+{% else %}
+
+<br>What's the mathematical symbol of the <b>fourth</b> card?</br>
+
+{% endif %}
+        <br>
+
+        Recall that the sender cannot see the 3 questions selected at this time. They will not see them until Stage 3.
+    </font>
+
+    {% endif %}
+
+</div>
+
+
+<div class = "right_column">
+        <font size="+1">
+
+{% if subsession.round_number == 1 %}
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set1.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set1.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set1.jpg" %}" width="800px"/><br><br>
+
+
+{% elif subsession.round_number == 2 %}
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set2.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set2.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set2.jpg" %}" width="800px"/><br><br>
+
+
+{% elif subsession.round_number == 3 %}
+
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set3.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set3.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set3.jpg" %}" width="800px"/><br><br>
+
+
+{% elif subsession.round_number == 4 %}
+
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set1.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set1.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set1.jpg" %}" width="800px"/><br><br>
+
+
+{% elif subsession.round_number == 5 %}
+
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set2.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set2.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set2.jpg" %}" width="800px"/><br><br>
+
+
+
+{% elif subsession.round_number == 6 %}
+
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set3.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set3.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set3.jpg" %}" width="800px"/><br><br>
+
+
+
+{% elif subsession.round_number == 7 %}
+
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set1.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set1.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set1.jpg" %}" width="800px"/><br><br>
+
+
+{% elif subsession.round_number == 8 %}
+
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set2.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set2.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set2.jpg" %}" width="800px"/><br><br>
+
+
+{% elif subsession.round_number == 9 %}
+
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set3.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set3.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set3.jpg" %}" width="800px"/><br><br>
+
+
+{% elif subsession.round_number == 10 %}
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set4.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set4.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set4.jpg" %}" width="800px"/><br><br>
+
+
+{% elif subsession.round_number == 11 %}
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set5.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set5.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set5.jpg" %}" width="800px"/><br><br>
+
+
+{% elif subsession.round_number == 12 %}
+
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set6.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set6.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set6.jpg" %}" width="800px"/><br><br>
+
+
+{% elif subsession.round_number == 13 %}
+
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set4.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set4.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set4.jpg" %}" width="800px"/><br><br>
+
+
+{% elif subsession.round_number == 14 %}
+
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set5.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set5.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set5.jpg" %}" width="800px"/><br><br>
+
+
+
+{% elif subsession.round_number == 15 %}
+
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set6.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set6.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set6.jpg" %}" width="800px"/><br><br>
+
+
+
+{% elif subsession.round_number == 16 %}
+
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set4.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set4.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set4.jpg" %}" width="800px"/><br><br>
+
+
+{% elif subsession.round_number == 17 %}
+
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set5.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set5.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set5.jpg" %}" width="800px"/><br><br>
+
+
+{% elif subsession.round_number == 18 %}
+
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set6.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set6.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set6.jpg" %}" width="800px"/><br><br>
+
+{% elif subsession.round_number == 19 %}
+
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set7.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set7.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set7.jpg" %}" width="800px"/><br><br>
+
+
+{% else %}
+
+
+Set <b>Up</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Middle_set7.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Middle</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Down_set7.jpg" %}" width="800px"/><br><br>
+
+
+Set <b>Down</b> has the following four cards: <br>
+
+<img src="{% static "Complexity/Complex_Up_set7.jpg" %}" width="800px"/><br><br>
+
+
+{% endif %}
+        </font>
+
+</div>
+
+
+
+<div style="width: 100%; height:100px;  vertical-align: middle;" class = "break_box">
+
+</div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<style>
+    .otree-timer {
+        display: none;
+    }
+</style>
+
+ <script>
+        let customTimerEle = document.getElementById('time-left');
+
+        document.addEventListener("DOMContentLoaded", function (event) {
+            $('.otree-timer__time-left').on('update.countdown', function (event) {
+                customTimerEle.innerText = event.offset.totalSeconds;
+            });
+        });
+
+    </script>
+
+{% endblock %}
+
+
+
+{% block styles %}
+
+
+<style>
+
+div.title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom:10px;
+    margin-top:-25px;
+}
+
+
+div.left_column {
+        float: left;
+    width: 500px;
+    margin-left:-300px;
+    border: 2px solid grey;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+div.right_column {
+        float: right;
+    width: 1000px;
+    margin-right:-300px;
+}
+
+ div.break_box {
+    vertical-align: middle;
+     clear: both;
+}
+
+
+</style>
+
+{% endblock %}
+

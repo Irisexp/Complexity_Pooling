@@ -1,0 +1,106 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+<div class = "title">
+
+</div>
+{% endblock %}
+
+{% block content %}
+
+<font size="+2">
+
+
+    {% if group.random_pay == 0 %}
+
+    In this round, the value of x is 12, so the sender's payoff is determined as follows: <br><br>
+
+    If the receiver guesses Up, the sender gets $15. <br>
+
+    If the receiver guesses Middle, the sender gets $12. <br>
+
+    If the receiver guesses Down, the sender gets $12. <br>
+
+    {% else %}
+    In this round, the value of x is 3, so the sender's payoff is determined as follows: <br><br>
+
+    If the receiver guesses Up, the sender gets $15. <br>
+
+    If the receiver guesses Middle, the sender gets $3. <br>
+
+    If the receiver guesses Down, the sender gets $3. <br>
+
+{% endif %}
+</font>
+
+<br><br>
+
+
+<!--The payoffs to each player are as follows:-->
+
+<!--<br><br>-->
+
+  <!--<table class = "Payoffs" cellpadding="10">-->
+        <!--<tr>-->
+            <!--<th></th>-->
+            <!--<th>Receiver Guess Up</th>-->
+            <!--<th>Receiver Guess Middle</th>-->
+            <!--<th>Receiver Guess Down</th>-->
+        <!--</tr>-->
+     <!--<tr>-->
+            <!--<th>Set is Up</th>-->
+            <!--<th>Sender 15, Receiver 15</th>-->
+            <!--<th>Sender 10, Receiver 10</th>-->
+            <!--<th>Sender 3, Receiver 3</th>-->
+        <!--</tr>-->
+           <!--<tr>-->
+            <!--<th>Set is Middle</th>-->
+            <!--<th>Sender 15, Receiver 10</th>-->
+            <!--<th>Sender 10, Receiver 15</th>-->
+            <!--<th>Sender 3, Receiver 8</th>-->
+        <!--</tr>-->
+      <!--<tr>-->
+            <!--<th>Set is Down</th>-->
+            <!--<th>Sender 15, Receiver 3</th>-->
+            <!--<th>Sender 10, Receiver 8</th>-->
+            <!--<th>Sender 3, Receiver 15</th>-->
+        <!--</tr>-->
+    <!--</table>-->
+
+<!--<br><br>-->
+
+
+{% next_button %}
+
+{% endblock %}
+
+
+
+
+{% block styles %}
+
+
+<style>
+div.title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom:10px;
+    margin-top:-25px;
+}
+
+
+div.Down_column {
+        float: right;
+    width: 1200px;
+    margin-right:-150px;
+    border: 2px solid grey;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+</style>
+
+{% endblock %}
+
+
